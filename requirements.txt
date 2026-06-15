@@ -1,0 +1,14 @@
+pyrofork
+TgCrypto-pyrofork
+asyncpg
+flask==3.0.0
+werkzeug==3.0.1
+gunicorn==21.2.0
+pillow
+matplotlib
+httpx
+requests
+GitPython
+aiocron
+pymongo[srv]
+motor
