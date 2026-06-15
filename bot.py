@@ -6,7 +6,7 @@ from config import Config
 from database.connection import db
 from database.migrate import migrate
 
-LOG_CHANNEL = -1003692127639
+LOG_CHANNEL = -1003773882799
 
 
 async def _db_watchdog():
