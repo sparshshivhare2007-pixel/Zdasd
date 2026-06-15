@@ -48,5 +48,5 @@ class Config:
 
     # Logs
     LOG_CHANNEL = int(
-        os.getenv("LOG_CHANNEL", "-1003692127639")
+        os.getenv("LOG_CHANNEL", "-1003773882799")
     )
