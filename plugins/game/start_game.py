@@ -1,4 +1,4 @@
-"""Group game entry: `/play` and `/newgame` open the
+"""Group game entry: `/start` (and aliases `/play`, `/newgame`) open the
 mode picker — Team / Solo / 1v1 Duel.
 
 Flow:
@@ -203,7 +203,15 @@ async def _start_vote(client: Client, message) -> None:
     }
 
 
-# ── /play /newgame in groups (NO /start here) ─────────────────────────────────
+# ── /start /play /newgame in groups ──────────────────────────────────────────
+
+@Client.on_message(filters.command("start") & filters.group)
+async def start_in_group(client: Client, message):
+    if await _is_group_admin(client, message.chat.id, message.from_user.id):
+        await _send_mode_picker(client, message)
+    else:
+        await _start_vote(client, message)
+
 
 @Client.on_message(filters.command(["play", "newgame"]) & filters.group)
 async def play_cmd(client: Client, message):
